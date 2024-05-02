@@ -27,6 +27,7 @@ aws_user = os.getenv('AWS_USER')
 aws_pass = os.getenv('AWS_PASS')
 db_url = os.getenv('DB_URL')
 
+CSRF_TRUSTED_ORIGINS = ['https://*.epinio.demo.stack.io']
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -167,3 +168,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Configure WhiteNoise for serving static files
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+

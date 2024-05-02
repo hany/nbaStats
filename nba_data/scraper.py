@@ -55,10 +55,11 @@ for team in teams:
 
 
     # locate current directory
-    script_dir = os.path.dirname(os.path.abspath(__file__))
+    #script_dir = os.path.dirname(os.path.abspath(__file__))
+    script_dir = '/tmp'
     
     # CSV file
-    csv_output_path = os.path.join(script_dir, '..', 'data', f'{team}_{season}_output.csv')
+    csv_output_path = os.path.join(script_dir, f'{team}_{season}_output.csv')
     with open(csv_output_path, "w", newline="") as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=headers)
         writer.writeheader()
@@ -66,7 +67,7 @@ for team in teams:
             writer.writerow(row)
 
     # Save as JSON
-    json_output_path = os.path.join(script_dir, '..', 'data', f'{team}_{season}_output.json')
+    json_output_path = os.path.join(script_dir, f'{team}_{season}_output.json')
     with open(json_output_path, 'w') as jsonfile:
         json.dump(data, jsonfile)
 
